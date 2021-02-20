@@ -2,7 +2,7 @@ const inNum = (string) => Number.isInteger(+string);
 
 
 const decryptPassword = (pass) => {
-  const expectedResult = '43Ah*c  k0rr0nk';
+  const expectedResult = '43Ah*ck 0rr0nk';
   let newPass = '';
 
   for (let i = 0; i < pass.length; i++) {
@@ -17,6 +17,12 @@ const decryptPassword = (pass) => {
       } else {
         newPass = newPass.concat(pass[i]);
       }
+    } else {
+      if (inNum(pass[i])) {
+        newPass = newPass.concat('0');
+      } else {
+        newPass = newPass.concat(pass[i]);
+      }
     }
   }
   return newPass;
@@ -24,6 +30,7 @@ const decryptPassword = (pass) => {
 
 const main = () => {
   const incomingPass = "hAck"; // "hAck3rr4nk"
+  const expectedResult = '43Ah*ck 0rr0nk';
   const result = decryptPassword(incomingPass);
   console.log('-- result', result);
 }
