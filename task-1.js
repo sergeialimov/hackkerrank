@@ -2,7 +2,9 @@ const inNum = (string) => Number.isInteger(+string);
 
 
 const decryptPassword = (pass) => {
+  const expectedResult = '43Ah*ck0rr0nk';
   let newPass = '';
+
   for (let i = 0; i < pass.length; i++) {
     let strI = pass[i];
     let strI1 = pass[i+1];
