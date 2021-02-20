@@ -1,6 +1,3 @@
-const { log } = require('console');
-const fs = require('fs');
-
 const inNum = (string) => Number.isInteger(+string);
 
 
@@ -21,8 +18,7 @@ function decryptPassword(pass) {
   return newPass;
 }
 function main() {
-  const incomingPass = "hAc";
-  // const incomingPass = "hAck3rr4nk";
+  const incomingPass = "hAc"; // "hAck3rr4nk"
   const result = decryptPassword(incomingPass);
   console.log('-- result', result);
 }
