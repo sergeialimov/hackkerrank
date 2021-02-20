@@ -21,18 +21,10 @@ function decryptPassword(pass) {
   return newPass;
 }
 function main() {
-  // const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
-  
   const incomingPass = "hAc";
-  // const s = "hAck3rr4nk";
-  console.log('start', incomingPass);
-
+  // const incomingPass = "hAck3rr4nk";
   const result = decryptPassword(incomingPass);
-  console.log('result', result);
-
-  // ws.write(result + '\n');
-
-  // ws.end();
+  console.log('-- result', result);
 }
 
 main();
