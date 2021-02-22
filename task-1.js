@@ -1,4 +1,6 @@
 const isNum = (string) => Number.isInteger(+string);
+const isLow = (string) => string === string.toLowerCase() && ! isNum(string);
+const isUp = (string) => (string === string.toUpperCase() && ! isNum(string));
 
 
 const decryptPassword = (pass) => {
@@ -12,7 +14,7 @@ const decryptPassword = (pass) => {
       newPass = newPass.concat('0');
     }
     if (i < pass.length - 1) {
-      if (pass[i] === pass[i].toLowerCase() && pass[i + 1] === pass[i + 1].toUpperCase()) {
+      if (isLow(pass[i]) && isUp(pass[i + 1])) {
         newPass = newPass.concat(pass[i + 1], pass[i], '*');
         i++;
       } else {
