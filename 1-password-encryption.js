@@ -29,7 +29,7 @@ const decryptPassword = (pass) => {
 }
 
 const main = () => {
-  const incomingPass = "hAck3"; // "hAck3rr4nk"
+  const incomingPass = "hAck3rr4nk"
   const expectedResult = '43Ah*ck 0rr0nk';
   const result = decryptPassword(incomingPass);
   console.log('-- result', result);
