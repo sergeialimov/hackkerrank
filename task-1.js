@@ -1,4 +1,4 @@
-const inNum = (string) => Number.isInteger(+string);
+const isNum = (string) => Number.isInteger(+string);
 
 
 const decryptPassword = (pass) => {
@@ -8,28 +8,25 @@ const decryptPassword = (pass) => {
   for (let i = 0; i < pass.length; i++) {
     let strI = pass[i];
     let strI1 = pass[i+1];
+    if (isNum(pass[i])) {
+      newPass = newPass.concat('0');
+    }
     if (i < pass.length - 1) {
-      if (inNum(pass[i])) {
-        newPass = newPass.concat('0');
-      } else if (pass[i] === pass[i].toLowerCase() && pass[i + 1] === pass[i + 1].toUpperCase()) {
+      if (pass[i] === pass[i].toLowerCase() && pass[i + 1] === pass[i + 1].toUpperCase()) {
         newPass = newPass.concat(pass[i + 1], pass[i], '*');
         i++;
       } else {
         newPass = newPass.concat(pass[i]);
       }
     } else {
-      if (inNum(pass[i])) {
-        newPass = newPass.concat('0');
-      } else {
-        newPass = newPass.concat(pass[i]);
-      }
+      newPass = newPass.concat(pass[i]);
     }
   }
   return newPass;
 }
 
 const main = () => {
-  const incomingPass = "hAck"; // "hAck3rr4nk"
+  const incomingPass = "hAck3"; // "hAck3rr4nk"
   const expectedResult = '43Ah*ck 0rr0nk';
   const result = decryptPassword(incomingPass);
   console.log('-- result', result);
