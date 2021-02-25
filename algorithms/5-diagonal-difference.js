@@ -30,18 +30,33 @@ function readLine() {
  */
 
 function diagonalDifference(arr) {
-  let res = 0;
+  // counting the first diagonal
+  let sum = 0;
   let n = 0;
   for (let i = 0; i < arr.length; i++) {
     const subArr = arr[i];
     for (n; n < subArr.length; n++) {
       let tmp = subArr[n];
-      res += tmp;
+      sum += tmp;
       n++;
       break;
     }
   }
-  return res;
+
+  // counting the second diagonal
+  let sum2 = 0;
+  let m = 0;
+  for (let i = arr.length - 1; i >= 0; i--) {
+    const subArr = arr[i];
+    for (m; m < subArr.length; m++) {
+      let tmp = subArr[m];
+      sum2 += tmp;
+      m++;
+      break;
+    }
+  }
+
+  return Math.abs(sum - sum2);
 }
 
 function main() {
