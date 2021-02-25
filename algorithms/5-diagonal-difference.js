@@ -30,9 +30,18 @@ function readLine() {
  */
 
 function diagonalDifference(arr) {
-    console.log('-- -- -- arr', arr);
-
-
+  let res = 0;
+  let n = 0;
+  for (let i = 0; i < arr.length; i++) {
+    const subArr = arr[i];
+    for (n; n < subArr.length; n++) {
+      let tmp = subArr[n];
+      res += tmp;
+      n++;
+      break;
+    }
+  }
+  return res;
 }
 
 function main() {
@@ -45,8 +54,9 @@ function main() {
     // for (let i = 0; i < n; i++) {
     //     arr[i] = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));
     // }
-    const arr1 = [[3], [11, 2, 4], [10, 8, -12]];
+    const arr1 = [[ 1, 2, 3 ], [ 4, 5, 6 ], [ 9, 8, 9 ]];
     const result = diagonalDifference(arr1);
+    console.log('-- -- -- result', result);
 
     // ws.write(result + '\n');
 
