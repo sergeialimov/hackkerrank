@@ -25,12 +25,12 @@ function readLine() {
 // Complete the staircase function below.
 function staircase(n) {
   // loop by lines
-  for (let i = 1; i < n; i++) {
+  for (let i = 1; i < n + 1; i++) {
 
     // adding spaces
     let line = '';
     for (let m = 0; m < n-i; m++) {
-      line = `${line}A`
+      line = `${line} `
     }
     
     // adding symbomls
