@@ -24,24 +24,22 @@ function readLine() {
 
 // Complete the staircase function below.
 function staircase(n) {
-  console.log('-- -- -- start');
-
   // loop by lines
   for (let i = 1; i < n; i++) {
 
     // adding spaces
-    let spaces = '';
+    let line = '';
     for (let m = 0; m < n-i; m++) {
-      spaces = `${spaces}-`
+      line = `${line}A`
     }
-    console.log(spaces);
     
     // adding symbomls
-    // let symbols = '';
-    // for (let k = n; k < n-i; k++) {
-    //   symbols = `${symbols}-`
-    // }
-    // console.log('#', );
+    let x = 0;
+    while (x < i) {
+      line = `${line}#`
+      x++;
+    }
+    console.log(line);
   }
 }
 
