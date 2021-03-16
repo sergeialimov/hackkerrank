@@ -24,15 +24,18 @@ function readLine() {
 
 // Complete the miniMaxSum function below.
 function miniMaxSum(arr) {
+  const tmp = [...arr];
+  tmp.sort((a, b) => a -b);
 
-console.log('-- -- -- arr', arr);
-
+  console.log('-- -- -- arr', arr);
+  console.log('-- -- -- tmp', tmp);
 }
 
 function main() {
     // const arr = readLine().split(' ').map(arrTemp => parseInt(arrTemp, 10));
 
-    miniMaxSum([1, 3, 5, 7, 9]);
+    miniMaxSum([3, 1, 5, 7, 9]);
 }
 
 main();
+process.exit();
