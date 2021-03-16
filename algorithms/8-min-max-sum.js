@@ -24,11 +24,14 @@ function readLine() {
 
 // Complete the miniMaxSum function below.
 function miniMaxSum(arr) {
-  const tmp = [...arr];
-  tmp.sort((a, b) => a -b);
-
-  console.log('-- -- -- arr', arr);
-  console.log('-- -- -- tmp', tmp);
+  const unsortedArr = [...arr];
+  unsortedArr.sort((a, b) => a - b);
+  const min = [...unsortedArr];
+  const max = [...unsortedArr];
+  min.pop();
+  max.shift();
+  const reducer = (acc, item) => acc + item;
+  console.log(min.reduce(reducer), max.reduce(reducer));
 }
 
 function main() {
