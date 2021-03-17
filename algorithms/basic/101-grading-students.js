@@ -9,22 +9,30 @@
  */
 
 function gradingStudents(grades) {
-  console.log('-- -- -- grades', grades);
-  
+  const handleGrade = (num) => {
+    let tmp = num;
+
+    if (tmp < 38) {
+      return tmp;
+    }
+
+    const remainder = tmp % 5;
+
+    if (remainder > 2) {
+      tmp += 5- remainder;
+      return tmp;
+    }
+    return tmp;
+  }
+  let res = [];
+  grades.forEach(grade => {
+    res.push(handleGrade(grade));
+  });
+  return res;
 }
 
 function main() {
-  // const gradesCount = parseInt(readLine().trim(), 10);
-  const gradesCount = 10;
-
-  let grades = [];
-
-  for (let i = 0; i < gradesCount; i++) {
-      // const gradesItem = parseInt(readLine().trim(), 10);
-      const gradesItem = 2;
-      grades.push(gradesItem);
-  }
-
+  const grades = [73, 67, 38, 33];
   const result = gradingStudents(grades);
   console.log('-- -- -- ', result);
     
