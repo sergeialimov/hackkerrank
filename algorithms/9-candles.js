@@ -15,13 +15,13 @@ function birthdayCakeCandles(candles) {
     return 0;
   }
   const tmp = [...candles];
-  const candle = tmp.sort().pop();
+  const candle = Math.max(...tmp);
   const candlesNum = tmp.filter((x) => x === candle);
-  return candlesNum.length + 1;
+  return candlesNum.length;
 }
 
 function main() {
-  const candles = [1];
+  const candles = [1000, 1000, 1000];
   const result = birthdayCakeCandles(candles);
   console.log('-- -- -- ', result);
 }
